@@ -1,41 +1,51 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-import pandas as pd
 import joblib
+import pandas as pd
 
 from backend.schemas import CustomerData
 
 
 app = FastAPI(
-    title="Telco Churn Prediction API"
+    title="Telco Churn Prediction API",
+    version="1.0.0"
 )
+
 
 model = joblib.load(
     "models/best_model.joblib"
 )
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",
+        "http://localhost:5173"
     ],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"]
 )
 
 
 @app.get("/")
 def root():
     return {
-        "message": "Telco Churn API is running"
+        "message": "Telco Churn Prediction API",
+        "status": "running"
+    }
+
+
+@app.get("/health")
+def health():
+    return {
+        "status": "healthy"
     }
 
 
 @app.post("/predict")
 def predict(data: CustomerData):
-
     customer = pd.DataFrame([
         data.model_dump()
     ])

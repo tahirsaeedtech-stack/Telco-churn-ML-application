@@ -1,45 +1,135 @@
 # Telco Customer Churn Prediction
 
-🌐 Live Demo
-🔗 GitHub
-⚡ FastAPI Docs
+Short project description
 
-Backend API
 Screenshot
 
-Problem Statement
+## Overview
 
-Dataset
+## Problem Statement
 
-Exploratory Data Analysis
+## Dataset
 
-Data Preprocessing
+## Project Architecture
 
-Models
+## Data Preprocessing
+
+## Machine Learning Models
+
+## Model Evaluation
+
+## Final Model
+
+## Application Features
+
+## Technology Stack
+
+## Project Structure
+
+## Running Locally
+
+## API
+
+## Screenshots
+
+## Results
+
+## Limitations
+
+## Future Improvements
+
+## Author
+
+# Telco Customer Churn Prediction
+
+An end-to-end machine learning application for predicting
+telecommunications customer churn.
+
+The project covers the complete ML workflow, including exploratory
+data analysis, preprocessing, model training, cross-validation,
+model comparison, API development, and React frontend integration.
+
+Three classification algorithms were evaluated:
+
 - Logistic Regression
 - Random Forest
 - Gradient Boosting
 
-Evaluation
-- Accuracy
-- Precision
-- Recall
-- F1
-- ROC-AUC
-- Cross-validation
+The trained model is exposed through a FastAPI REST API and integrated
+with a React/Vite frontend for interactive customer churn prediction.
 
-Model Comparison
+User
+ │
+ ▼
+React Frontend
+ │
+ │ JSON / HTTP
+ ▼
+FastAPI Backend
+ │
+ ▼
+Scikit-learn Pipeline
+ │
+ ├── Missing-value handling
+ ├── Scaling
+ ├── One-hot encoding
+ │
+ ▼
+ML Classifier
+ │
+ ▼
+Churn probability
 
-Final Model
+Machine Learning
+- Python
+- Pandas
+- NumPy
+- scikit-learn
+- Joblib
 
-Architecture
+Backend
+- FastAPI
+- Pydantic
+- Uvicorn
 
-Tech Stack
+Frontend
+- React
+- Vite
+- Tailwind CSS
+- Lucide React
 
-How to Run Locally
+Development
+- Jupyter Notebook
+- VS Code
+- Git
+- GitHub
 
-API Usage
+## Backend
+installation instructions
+git clone <repository>
+cd Telco-churn-ML-application
 
-Project Structure
+python -m venv .venv
 
-Future Improvements
+## Windows
+.venv\Scripts\activate
+
+## Install
+pip install -r requirements.txt
+
+## Run
+python -m uvicorn backend.main:app --reload
+
+## Frontend
+cd frontend
+npm install
+npm run dev
+
+Frontend:
+http://localhost:5173
+
+Backend:
+http://127.0.0.1:8000
+
+Swagger:
+http://127.0.0.1:8000/docs
