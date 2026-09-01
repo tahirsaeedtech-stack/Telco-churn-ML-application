@@ -40,7 +40,8 @@ def root():
 @app.get("/health")
 def health():
     return {
-        "status": "healthy"
+        "status": "healthy",
+        "service": "telco-churn-api"
     }
 
 

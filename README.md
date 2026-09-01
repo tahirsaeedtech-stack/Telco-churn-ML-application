@@ -614,3 +614,26 @@ Production deployment is planned after completion of the broader ML portfolio.
 ---
 
 ### If you found this project useful, consider giving the repository a ⭐.
+
+## Dockerized Deployment
+
+The application is containerized using Docker and Docker Compose.
+
+### Architecture
+
+- React frontend served through Nginx
+- FastAPI REST API
+- Scikit-learn ML pipeline
+- Separate frontend and backend containers
+- Docker Compose orchestration
+- Health-check endpoint
+- Environment-based frontend API configuration
+- Application logging
+
+### Run with Docker Compose
+
+Clone the repository:
+
+```bash
+git clone https://github.com/tahirsaeedtech-stack/Telco-churn-ML-application.git
+cd Telco-churn-ML-application
