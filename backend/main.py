@@ -13,6 +13,18 @@ app = FastAPI(
     version="1.0.0"
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "https://telco-churn-ml-application.vercel.app",
+    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 model = joblib.load(
     "models/best_model.joblib"
@@ -64,22 +76,3 @@ def predict(data: CustomerData):
         "prediction": int(prediction),
         "churn_probability": float(probability)
     }
-
-
-frontend_url = os.getenv("FRONTEND_URL")
-
-allowed_origins = [
-    "http://localhost:3000",
-    "http://localhost:5173",
-]
-
-if frontend_url:
-    allowed_origins.append(frontend_url)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=allowed_origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
